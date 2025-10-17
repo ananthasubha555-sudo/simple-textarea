@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+</head>
+<body>
+    <div class="flex flex-col items-center justify-center h-100 bg-gray-600 w-350 p-20 m-40 mt-20 rounded-2xl">
+        <h1 class="text-red-800 font-bold text-7xl mt-1 underline">Red Bus</h1>
+        <h3 class="mt-2 p-2 text-2xl">Dear customer! We hope, you are enjoy this journey. Thank you!</h3>
+        <h2 class="mt-2 p-2 text-3xl">Give A Feedback</h1>
+        <p class="text-black text-sm mb-3">(200 Charactors max)</p>
+        <textarea maxlength="200" class="w-full h-50  p-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 resize-none" id="message" placeholder="Type message"></textarea>
+        <div class="text-blue-600 text-right mt-2" id="counter">0 / 200 characters</div>
+    <div class="text-red-500 font-medium text-center mt-2 hidden" id="warning">⚠ You have reached the character limit!</div>
+    </div>
+</body>
+</html>
+<script>
+     
+  var textarea = document.getElementById("message");
+  var counter = document.getElementById("counter");
+  var warning = document.getElementById("warning");
+  var maxLength = 200;
+  textarea.addEventListener("input", function () {
+    var length = textarea.value.length;
+    var balancelength = maxLength - length;
+    counter.textContent = `${length} / ${maxLength} characters`;
+    if (balancelength <= 0) {
+      warning.classList.remove("hidden");
+    } else {
+      warning.classList.add("hidden");
+    }
+  });
+
+</script>
