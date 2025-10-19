@@ -38,7 +38,7 @@ When the user reaches the maximum limit (e.g., 200 characters), further typing i
 
 Download or clone this repository:
 
-git clone https://github.com/your-username/textarea-counter.git
+git clone https:(https://ananthasubha555-sudo.github.io/simple-textarea/)
 
 
 Open the project folder.
